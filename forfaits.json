@@ -1,0 +1,67 @@
+{
+	"forfaits": [
+		{
+			"id": "1",
+			"nom": "Séjour à Paris",
+			"description": "Découvrez la beauté de la ville avec un guide local et des activités inoubliables.",
+			"prix": 3.5,
+			"categorie": "Culture"
+		},
+		{
+			"id": "2",
+			"nom": "Séjour à Rome",
+			"description": "Visitez les sites historiques les plus emblématiques et vivez une expérience unique.",
+			"prix": 4.5,
+			"categorie": "Historique"
+		},
+		{
+			"id": "3",
+			"nom": "Plongeon vers les Caraïbes",
+			"description": "Un mélange d’aventure et de détente dans une destination exotique. Nourriture savoureuse et fruits de mer décadents",
+			"prix": 2.5,
+			"categorie": "Plage"
+		},
+		{
+			"id": "4",
+			"nom": "Une escapade à Marrakech",
+			"description": "Idéal pour un séjour romantique ou une lune de miel inoubliable..",
+			"prix": 5.5,
+			"categorie": "Romantique"
+		},
+		{
+			"id": "5",
+			"nom": "Une aventure à Sidney",
+			"description": "Profitez de paysages à couper le souffle et d’activités en plein air.",
+			"prix": 3.5,
+			"categorie": "Aventure"
+		},
+		{
+			"id": "6",
+			"nom": "Séjour à Hanoï",
+			"description": "Explorez les plages, détendez-vous et profitez du soleil.",
+			"prix": 3.5,
+			"categorie": "Spa et détente"
+		},
+        {
+			"id": "7",
+			"nom": "Valse à Vienne",
+			"description": "Un séjour parfait pour les amateurs de culture et de gastronomie.",
+			"prix": 3.5,
+			"categorie": "Gastronomie"
+		},
+        {
+			"id": "8",
+			"nom": "Le monde de Disney",
+			"description": "Parfait pour les familles à la recherche de vacances divertissantes.",
+			"prix": 6.5,
+			"categorie": "Famille"
+		},
+        {
+			"id": "9",
+			"nom": "Un matin au Caire",
+			"description": "Un circuit complet pour découvrir tous les trésors cachés de la région.",
+			"prix": 6.5,
+			"categorie": "Historique"
+		}
+	]
+}
