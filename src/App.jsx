@@ -1,10 +1,23 @@
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
 import AddPackage from "./components/AddPackage";
-import ManyPackages from "./components/ManyPackages";
-import { useState, useEffect } from "react";
+import AllPackages from "./components/AllPackages";
+import EditPackage from "./components/EditPackage";
+import Package from "./components/Package";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function App() {
 	const [packages, setPackages] = useState([]);
+	const [showAddPackage, setShowAddPackage] = useState(false);
+	const categories = [...new Set(packages.map((p) => p.categorie))];
+	const location = useLocation();
+
+	// Fermer le formulaire à chaque navigation
+	useEffect(() => {
+		setShowAddPackage(false);
+	}, [location]);
 
 	useEffect(() => {
 		const getPackages = async () => {
@@ -22,57 +35,117 @@ function App() {
 		return data;
 	};
 
+	const toggleReminder = async (id) => {
+		const packageToToggle = await fetchPackages(
+			`http://localhost:5000/forfaits/${id}`
+		);
+		const updPackage = {
+			...packageToToggle,
+			reminder: !packageToToggle.reminder,
+		};
+		const res = await fetch(`http://localhost:5000/forfaits/${id}`, {
+			method: "PUT",
+			headers: {
+				"Content-type": "application/json",
+			},
+			body: JSON.stringify(updPackage),
+		});
+		const data = await res.json();
+
+		setPackages(
+			packages.map((p) =>
+				p.id === id ? { ...p, reminder: data.reminder } : p
+			)
+		);
+	};
+
 	const deletePackage = async (id) => {
-		// alert(id)
-		// console.log(id)
-		await fetch(`http://localhost:5000/packages/${id}`, {
+		await fetch(`http://localhost:5000/forfaits/${id}`, {
 			method: "DELETE",
 		});
 		setPackages(packages.filter((p) => p.id !== id));
 	};
 
-	const toggleReminder = (id) => {
-		// alert(id)
-		setForfait(
-			tasks.map((f) =>
-				f.id === id ? { ...f, reminder: !f.reminder } : f
-			)
-		);
-	};
-
-	
-	const addPackage = async (p) => {
-		const res = await fetch("http://localhost:5000/packages", {
-			method: "POST",
-
-			headers: {
-				"Content-type": "application/json",
-			},
-			body: JSON.stringify(p),
+	const editPackage = async (id) => {
+		await fetch(`http://localhost:5000/forfaits/${id}`, {
+			method: "PATCH",
 		});
-
-		const newPackage = await res.json();
-
-		// console.log(task)
-		/*const lastId = tasks.length > 0 ? tasks[tasks.length - 1].id : 0;
-	const id = lastId + 1;
-	const newTask = { id, ...task };*/
-		setPackages([...packages, newPackage]);
+		setPackages(packages.filter((p) => p.id !== id));
 	};
-	const [showAddPackage, setShowAddPackage] = useState(false);
+
+	const addPackage = async (p) => {
+		try {
+			console.log("Données envoyées :", p);
+			const res = await fetch("http://localhost:5000/forfaits", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(p),
+			});
+			if (!res.ok) {
+				throw new Error("Erreur lors de l'ajout du forfait");
+			}
+			const newPackage = await res.json();
+			setPackages([...packages, newPackage]);
+		} catch (error) {
+			console.error("Erreur d'ajout :", error);
+		}
+	};
+
+	//const [showAddPackage, setShowAddPackage] = useState(false);
+
 	return (
-		<div className="font-sans min-h-screen">
-			<div className="container mx-auto p-8 border-2 border-blue-200 mt-16 max-w-screen-md rounded">
-				<Header toggleForm={() => setShowAddPackage(!showAddPackage)} />
-				{showAddPackage && <AddPackage onAdd={addPackage} />}
-				<ManyPackages
-					packages={packages}
-					onDelete={deletePackage}
-					onToggle={toggleReminder}
-				/>
+		
+			<div className="body font-sans min-h-screen">
+				<div className="container mx-auto p-8 mt-16 max-w-screen-md rounded bg-white">
+					<Header
+						toggleForm={() => setShowAddPackage(!showAddPackage)}
+						showAdd={showAddPackage}
+					/>
+
+					{showAddPackage ? (
+						<AddPackage
+							onAdd={addPackage}
+							categories={categories}
+						/>
+					) : (
+						<Routes>
+							<Route
+								path="/"
+								element={
+									<Home
+										packages={packages}
+										onToggle={toggleReminder}
+									/>
+								}
+							/>
+							<Route
+								path="/forfaits"
+								element={<AllPackages packages={packages} />}
+							/>
+							<Route
+								path="/forfait/:id"
+								element={
+									<Package
+										setShowAddPackage={setShowAddPackage}
+										onDelete={deletePackage}
+									/>
+								}
+							/>
+							<Route
+								path="/forfaits/:id/edit"
+								element={
+									<EditPackage
+										onEdit={editPackage}
+										categories={categories}
+									/>
+								}
+							/>
+						</Routes>
+					)}
+
+					<Footer />
+				</div>
 			</div>
-		</div>
 	);
 }
-
 export default App;
