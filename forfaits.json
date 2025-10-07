@@ -1,67 +1,272 @@
 {
-	"forfaits": [
-		{
-			"id": "1",
-			"nom": "Séjour à Paris",
-			"description": "Découvrez la beauté de la ville avec un guide local et des activités inoubliables.",
-			"prix": 3.5,
-			"categorie": "Culture"
-		},
-		{
-			"id": "2",
-			"nom": "Séjour à Rome",
-			"description": "Visitez les sites historiques les plus emblématiques et vivez une expérience unique.",
-			"prix": 4.5,
-			"categorie": "Historique"
-		},
-		{
-			"id": "3",
-			"nom": "Plongeon vers les Caraïbes",
-			"description": "Un mélange d’aventure et de détente dans une destination exotique. Nourriture savoureuse et fruits de mer décadents",
-			"prix": 2.5,
-			"categorie": "Plage"
-		},
-		{
-			"id": "4",
-			"nom": "Une escapade à Marrakech",
-			"description": "Idéal pour un séjour romantique ou une lune de miel inoubliable..",
-			"prix": 5.5,
-			"categorie": "Romantique"
-		},
-		{
-			"id": "5",
-			"nom": "Une aventure à Sidney",
-			"description": "Profitez de paysages à couper le souffle et d’activités en plein air.",
-			"prix": 3.5,
-			"categorie": "Aventure"
-		},
-		{
-			"id": "6",
-			"nom": "Séjour à Hanoï",
-			"description": "Explorez les plages, détendez-vous et profitez du soleil.",
-			"prix": 3.5,
-			"categorie": "Spa et détente"
-		},
-        {
-			"id": "7",
-			"nom": "Valse à Vienne",
-			"description": "Un séjour parfait pour les amateurs de culture et de gastronomie.",
-			"prix": 3.5,
-			"categorie": "Gastronomie"
-		},
-        {
-			"id": "8",
-			"nom": "Le monde de Disney",
-			"description": "Parfait pour les familles à la recherche de vacances divertissantes.",
-			"prix": 6.5,
-			"categorie": "Famille"
-		},
-        {
-			"id": "9",
-			"nom": "Un matin au Caire",
-			"description": "Un circuit complet pour découvrir tous les trésors cachés de la région.",
-			"prix": 6.5,
-			"categorie": "Historique"
-		}
-	]
+  "forfaits": [
+    {
+      "nom": "Escapade en Grèce",
+      "description": "Admirez les paysages sublimes et les vues à couper le souffle de la Grèce. Allez à la rencontre des habitants et faites des découvertes culinaires et activités inoubliables avec un guide local.",
+      "prix": 5800,
+      "categorie": "Gastronomie",
+      "dateCreation": "2025-10-04",
+      "images": [
+        "https://images.pexels.com/photos/161275/santorini-travel-holidays-vacation-161275.jpeg",
+        "https://images.pexels.com/photos/2291340/pexels-photo-2291340.jpeg",
+        "https://images.pexels.com/photos/772686/pexels-photo-772686.jpeg",
+        "https://images.pexels.com/photos/984881/pexels-photo-984881.jpeg",
+        "https://images.pexels.com/photos/984881/pexels-photo-984881.jpeg"
+      ],
+      "id": "1"
+    },
+    {
+      "nom": "Séjour à Rome",
+      "description": "Visitez les sites historiques les plus emblématiques et vivez une expérience unique.",
+      "prix": 4500,
+      "categorie": "Romantique",
+      "dateCreation": "2023-11-23",
+      "miseAJour": "",
+      "images": [
+        "https://images.pexels.com/photos/2422251/pexels-photo-2422251.jpeg",
+        "https://images.pexels.com/photos/1243538/pexels-photo-1243538.jpeg",
+        "https://cdn.pixabay.com/photo/2025/03/31/21/30/italy-9505450_640.jpg",
+        "https://cdn.pixabay.com/photo/2022/06/05/20/24/rome-7244828_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/10/06/08/57/tiber-river-4529605_640.jpg"
+      ],
+      "id": "2"
+    },
+    {
+      "nom": "Plongeon dans les Caraïbes",
+      "description": "Un mélange d’aventure et de détente dans une destination exotique. Nourriture savoureuse et fruits de mer décadents!",
+      "prix": 2500,
+      "categorie": "Culture",
+      "dateCreation": "2023-11-26",
+      "images": [
+        "https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg",
+        "https://images.pexels.com/photos/2598675/pexels-photo-2598675.jpeg",
+        "https://images.pexels.com/photos/921724/pexels-photo-921724.jpeg",
+        "https://images.pexels.com/photos/3661926/pexels-photo-3661926.jpeg",
+        "https://images.unsplash.com/photo-1678377402149-7e13cedccd4a?q=80&w=1746&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "id": "3"
+    },
+    {
+      "nom": "Une escapade à Marrakech",
+      "description": "Idéal pour un séjour pleins de saveurs, de couleurs et d'expériences inoubliables.",
+      "prix": 5500,
+      "categorie": "Culture",
+      "dateCreation": "2023-10-05",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2016/07/03/12/53/camel-1494724_640.jpg",
+        "https://cdn.pixabay.com/photo/2022/02/16/15/22/palm-trees-7016988_640.jpg",
+        "https://cdn.pixabay.com/photo/2020/02/06/09/45/morocco-4823625_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/03/04/18/34/souk-4034929_640.jpg",
+        "https://cdn.pixabay.com/photo/2015/10/21/11/20/marrakesh-999390_640.jpg"
+      ],
+      "id": "4"
+    },
+    {
+      "nom": "Une aventure à Sidney",
+      "description": "Profitez de paysages à couper le souffle et d’activités en plein air.",
+      "prix": 3500,
+      "categorie": "Spa et détente",
+      "dateCreation": "2023-12-05",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2013/12/28/13/14/sidney-234714_640.jpg",
+        "https://cdn.pixabay.com/photo/2013/03/08/15/59/sidney-percy-91597_640.jpg",
+        "https://images.unsplash.com/photo-1656177453230-6efd1d7c8ced?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fFNpZG5leXxlbnwwfHwwfHx8MA%3D%3D",
+        "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U2lkbmV5fGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1656177075015-5e90b209b6e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fFNpZG5leXxlbnwwfHwwfHx8MA%3D%3D"
+      ],
+      "id": "5"
+    },
+    {
+      "nom": "Séjour à Hanoï",
+      "description": "Partir en exploration à Hanoï, c’est s’immerger dans le cœur culturel du Vietnam, entre ruelles animées, temples anciens et lacs paisibles. La ville séduit par son mélange d’influences coloniales françaises et de traditions vietnamiennes, offrant une expérience à la fois vibrante et authentique.",
+      "prix": 3500,
+      "categorie": "Spa et détente",
+      "dateCreation": "2023-12-12",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2022/01/08/22/11/vietnam-6924905_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/06/30/05/14/cyclo-2457262_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/05/03/16/26/street-vendor-4176310_640.jpg",
+        "https://cdn.pixabay.com/photo/2024/03/04/14/56/pagoda-8612554_640.jpg"
+      ],
+      "id": "6"
+    },
+    {
+      "nom": "Le monde de Disney",
+      "description": "Le monde de Disney, c’est plonger dans un univers magique où les contes prennent vie à travers des parades, attractions spectaculaires et rencontres avec les personnages emblématiques. Petits et grands y vivent une expérience inoubliable, entre émerveillement, aventures et rêves réalisés.",
+      "prix": 6500,
+      "categorie": "Famille",
+      "dateCreation": "2024-01-23",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2015/12/18/03/03/germany-1098189_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/09/06/16/06/minie-2722062_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/07/05/08/29/sea-lion-2473783_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/06/29/21/37/disney-2456301_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/02/18/15/59/disney-4004731_640.jpg"
+      ],
+      "id": "8"
+    },
+    {
+      "nom": "Un matin au Caire",
+      "description": "Un matin au Caire s’éveille dans une douce effervescence, entre l’appel du muezzin, le bourdonnement des klaxons et l’odeur du pain frais dans les rues animées. La lumière dorée du soleil caresse les minarets et les toits poussiéreux, tandis que la ville s’étire lentement entre modernité et histoire millénaire.",
+      "prix": 6500,
+      "categorie": "Historique",
+      "dateCreation": "2024-03-28",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2018/10/20/00/24/egypt-3760000_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/01/14/20/55/cairo-1980350_640.jpg",
+        "https://cdn.pixabay.com/photo/2018/11/09/11/45/pyramid-3804374_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/06/12/12/27/egypt-4269151_1280.jpg",
+        "https://cdn.pixabay.com/photo/2021/10/05/01/16/cairo-6681473_640.jpg"
+      ],
+      "id": "9"
+    },
+    {
+      "nom": "Séjour en Écosse",
+      "description": "Un séjour en Écosse, c’est une immersion dans des paysages mystiques de lochs brumeux, de châteaux perchés et de hautes terres balayées par le vent. Entre randonnées dans les Highlands, visites de distilleries et légendes celtiques, chaque instant y évoque l’histoire et la magie.",
+      "prix": 3500,
+      "categorie": "Historique",
+      "dateCreation": "2024-06-03",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2016/04/18/13/13/dunrobin-castle-1336469_640.jpg",
+        "https://cdn.pixabay.com/photo/2018/08/27/16/47/puffin-3635462_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/08/13/20/24/scotland-4404180_640.jpg",
+        "https://cdn.pixabay.com/photo/2021/07/15/09/22/road-6467945_640.jpg",
+        "https://cdn.pixabay.com/photo/2018/11/30/19/30/dublin-3848404_640.jpg"
+      ],
+      "id": "407c"
+    },
+    {
+      "nom": "Alaska ",
+      "description": "Voyager en Alaska, c’est découvrir une nature sauvage et préservée, entre glaciers majestueux, forêts denses et montagnes spectaculaires. Ce territoire isolé offre une aventure unique, rythmée par la faune arctique, les aurores boréales et les vastes étendues inhabitées.",
+      "prix": 3450,
+      "categorie": "Aventure",
+      "dateCreation": "2024-07-14",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2018/03/02/07/11/skagway-3192450_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/09/02/21/34/view-2708640_640.jpg",
+        "https://cdn.pixabay.com/photo/2020/01/10/10/09/grizzly-4754956_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/10/13/15/30/alaska-4546372_640.jpg",
+        "https://cdn.pixabay.com/photo/2021/09/11/05/54/orcas-6614722_640.jpg"
+      ],
+      "id": "87b1"
+    },
+    {
+      "nom": "Séjour en Espagne",
+      "description": "ChatGPT a dit :\n\nL’Espagne est un pays ensoleillé du sud de l’Europe, riche en diversité culturelle, gastronomique et architecturale. De Barcelone à Séville, elle fascine par son histoire, ses fêtes colorées et ses paysages variés entre plages, montagnes et plaines.",
+      "prix": 6500,
+      "categorie": "Romantique",
+      "dateCreation": "2024-12-07",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2015/06/29/12/52/space-825551_640.jpg",
+        "https://images.unsplash.com/photo-1495562569060-2eec283d3391?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1578912996078-305d92249aa6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEVzcGFnbmV8ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1529686398651-b8112f4bb98c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fEVzcGFnbmV8ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1533854257392-71c5ff28dff7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fEVzcGFnbmV8ZW58MHx8MHx8fDA%3D"
+      ],
+      "id": "3a62"
+    },
+    {
+      "nom": "Mystère en Bolivie",
+      "description": "Voyager en Bolivie, c’est plonger dans une aventure authentique au cœur de paysages grandioses comme le Salar d’Uyuni, le lac Titicaca ou l’Amazonie. Ce pays fascinant permet de découvrir des cultures indigènes vivantes, des marchés colorés et une histoire riche, entre nature et traditions.",
+      "prix": 3800,
+      "categorie": "Aventure",
+      "dateCreation": "2025-02-14",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2017/08/10/20/32/hammocks-2627536_640.jpg",
+        "https://cdn.pixabay.com/photo/2015/12/29/16/00/condominium-1113003_640.jpg",
+        "https://cdn.pixabay.com/photo/2020/08/04/04/35/textile-5461603_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/09/22/09/42/cusco-2774927_640.jpg",
+        "https://cdn.pixabay.com/photo/2013/07/07/16/52/peru-143876_640.jpg"
+      ],
+      "id": "facd"
+    },
+    {
+      "nom": "Rendez-vous dans les Rocheuses",
+      "description": "Explorer les Rocheuses, c’est partir à l’aventure au cœur de montagnes grandioses, entre lacs turquoise, forêts denses et sommets enneigés. Que ce soit en randonnée, à ski ou lors d’une expédition en pleine nature, chaque moment offre un spectacle sauvage et inoubliable.",
+      "prix": 2300,
+      "categorie": "Aventure",
+      "dateCreation": "2025-10-03",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2024/01/25/12/30/mountain-8531778_640.jpg",
+        "https://cdn.pixabay.com/photo/2014/11/20/16/34/saxon-switzerland-539418_640.jpg",
+        "https://cdn.pixabay.com/photo/2020/12/23/08/00/bow-lake-5854210_640.jpg",
+        "https://cdn.pixabay.com/photo/2015/12/26/12/34/rocky-mountains-1108624_640.jpg",
+        "https://cdn.pixabay.com/photo/2021/01/08/17/56/river-5900547_640.jpg"
+      ],
+      "id": "1767"
+    },
+    {
+      "nom": "Séjour lumineux au Brésil",
+      "description": "Partez à la découverte d'un paysage grandiose et majestueux",
+      "prix": 3700,
+      "categorie": "Culture",
+      "dateCreation": "2025-10-03",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2014/04/23/00/15/plantation-330239_640.jpg",
+        "https://cdn.pixabay.com/photo/2012/12/12/14/15/brazil-69588_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/12/20/02/25/por-do-sol-4707500_640.jpg",
+        "https://cdn.pixabay.com/photo/2016/07/22/04/03/rio-de-janeiro-1534128_1280.jpg"
+      ],
+      "id": "f711"
+    },
+    {
+      "nom": "Nouvelle-Zélande",
+      "description": "Partez pour un voyage inoubliable au bout du monde ! Ce forfait complet en Nouvelle-Zélande vous emmène à la découverte de paysages à couper le souffle : fjords majestueux, volcans, plages sauvages et forêts millénaires.",
+      "prix": 8000,
+      "categorie": "Aventure",
+      "dateCreation": "2025-10-03",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2022/05/16/01/15/road-7199274_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/11/11/18/25/mount-taranaki-2939890_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/03/14/19/09/wellington-2144119_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/03/17/13/39/maori-2151594_640.jpg",
+        "https://cdn.pixabay.com/photo/2016/09/10/14/01/new-zealand-1659148_640.jpg"
+      ],
+      "id": "9198"
+    },
+    {
+      "nom": "Chine : civilisation Millénaire",
+      "description": "Embarquez pour une aventure fascinante à travers la Chine, un pays aux contrastes saisissants où l’histoire impériale côtoie l’effervescence moderne. ",
+      "prix": 10500,
+      "categorie": "Culture",
+      "dateCreation": "2025-10-03",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2020/08/12/19/28/great-wall-of-china-5483516_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/08/21/16/03/panda-4421395_640.jpg",
+        "https://cdn.pixabay.com/photo/2021/11/25/15/28/temple-6823939_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/04/04/17/58/road-4103334_640.jpg",
+        "https://cdn.pixabay.com/photo/2021/11/12/07/04/china-6788187_640.jpg"
+      ],
+      "id": "cd22"
+    },
+    {
+      "nom": "Découverte de la Toscane",
+      "description": "La Toscane est une région d’Italie réputée pour ses paysages vallonnés, ses villages médiévaux et ses vignobles renommés. Elle séduit par son patrimoine artistique exceptionnel, notamment à Florence, berceau de la Renaissance.",
+      "prix": 7500,
+      "categorie": "Romantique",
+      "dateCreation": "2025-10-05",
+      "miseAJour": "",
+      "images": [
+        "https://cdn.pixabay.com/photo/2020/02/13/12/46/tuscany-4845530_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/10/01/23/41/la-vialla-2807436_640.jpg",
+        "https://cdn.pixabay.com/photo/2019/07/18/17/03/florence-4346837_640.jpg",
+        "https://cdn.pixabay.com/photo/2016/04/28/22/47/steak-1359897_640.jpg",
+        "https://cdn.pixabay.com/photo/2017/09/10/18/22/summer-2736457_640.jpg"
+      ],
+      "id": "8832"
+    }
+  ]
 }

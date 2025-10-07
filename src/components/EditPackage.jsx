@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import PopUpSuccess from "./PopUpSuccess"; 
 
-const AddPackage = ({onAdd, categories = [] }) => {
+const EditPackage = ({onEdit, categories = [] }) => {
+	const { id } = useParams();
 	const navigate = useNavigate();
 
 	// États pour chaque champ
@@ -10,77 +12,121 @@ const AddPackage = ({onAdd, categories = [] }) => {
 	const [prix, setPrix] = useState("");
 	const [categorie, setCategorie] = useState("");
 	const [dateCreation, setDateCreation] = useState("");
-	const [images, setImages] = useState([""]);
-	const [successMessage, setSuccessMessage] = useState("");
+	const [images, setImages] = useState([]);
+	const validImages = images.filter((img) => img?.trim() !== "");
+	const [successMessage, setSuccessMessage] = useState(""); // Message de succès
+
+	useEffect(() => {
+		const fetchPackage = async () => {
+			try {
+				const res = await fetch(`http://localhost:5000/forfaits/${id}`);
+				if (!res.ok)
+					throw new Error("Erreur lors du chargement du forfait");
+
+				const data = await res.json();
+				setNom(data.nom || "");
+				setDescription(data.description || "");
+				setPrix(
+					data.prix !== undefined && data.prix !== null
+						? data.prix.toString()
+						: ""
+				);
+				setCategorie(data.categorie || "");
+				setDateCreation(data.dateCreation || "");
+				setImages(Array.isArray(data.images) ? data.images : []);
+			} catch (error) {
+				console.error("Erreur :", error);
+			}
+		};
+
+		fetchPackage();
+	}, [id]);
+
+	// Section images
 
 	const handleImageChange = (index, value) => {
-		const addedImages = [...images];
-		addedImages[index] = value;
-		setImages(addedImages);
+		const updatedImages = [...images];
+		updatedImages[index] = value;
+		setImages(updatedImages);
 	};
 
 	const addImageInput = () => {
-		if (images.length < 5) setImages([...images, ""]);
+		if (images.length < 5) {
+			setImages([...images, ""]);
+		}
 	};
 
 	const removeImageInput = (index) => {
-		const removedImage = [...images];
-		removedImage.splice(index, 1);
-		setImages(removedImage);
+		const updatedImages = [...images];
+		updatedImages.splice(index, 1);
+		setImages(updatedImages);
 	};
 
-	const handleSubmit = async (e) => {
+	// Soumission du formulaire
+
+	const onSubmit = async (e) => {
 		e.preventDefault();
 
-		if (!nom || !description || !prix || !categorie || !dateCreation) {
-			alert("Tous les champs sont obligatoires");
-			return;
-		}
-
-		const newPackage = {
+		const updatedPackage = {
 			nom,
 			description,
-			prix,
+			prix: parseFloat(prix),
 			categorie,
 			dateCreation,
-			images: images.filter((url) => url.trim() !== ""), // filtrer les champs vides
+			images: images.filter((img) => img.trim() !== ""), // nettoyer les vides
 		};
 
-		onAdd(newPackage)
-
 		try {
-			const res = await fetch(`http://localhost:5000/forfaits`, {
-				method: "POST",
+			const res = await fetch(`http://localhost:5000/forfaits/${id}`, {
+				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify(AddPackage),
+				body: JSON.stringify(updatedPackage),
 			});
 
 			if (!res.ok) {
-				throw new Error("Échec de l'ajout du forfait");
+				throw new Error("Échec de la mise à jour du forfait");
 			}
-
 			const data = await res.json(); // contient le nouveau forfait avec son id
 
 			navigate(`/forfait/${data.id}`, {
-				state: { package: data, successMessage: `...` },
+				state: {
+					
+					successMessage: `Le forfait a bien été modifié!`,
+				},
 			});
+			
 
 		} catch (error) {
-			console.error("Erreur lors de l'ajout' :", error);
+			console.error("Erreur lors de la modification :", error);
 		}
 	};
 
 	return (
 		<div className="formulaire p-6 max-w-xl mx-auto">
-			<h2 className="text-2xl font-bold mb-4">Ajouter un Forfait</h2>
-			{successMessage && (
-				<div className="bg-green-100 text-green-700 px-4 py-2 rounded">
-					{successMessage}
+			<h2 className="text-2xl font-bold mb-4">Éditer le Forfait</h2>
+			<PopUpSuccess
+				message={successMessage}
+				onClose={() => setSuccessMessage("")}
+			/>
+			{validImages.length > 0 ? (
+				<div className=" grid grid-cols-2 gap-4 my-4">
+					{validImages.map((img, i) => (
+						<img
+							key={i}
+							src={img}
+							alt={`Image ${i + 1}`}
+							className="w-full h-48 object-cover rounded"
+						/>
+					))}
 				</div>
+			) : (
+				<p className="italic text-gray-600">
+					Aucune image valide à afficher.
+				</p>
 			)}
-			<form className="space-y-4" onSubmit={handleSubmit}>
+			<form className="space-y-4" onSubmit={onSubmit}>
 				<div className="form-control mt-5">
 					<label>Forfait</label>
 					<input
@@ -88,7 +134,6 @@ const AddPackage = ({onAdd, categories = [] }) => {
 						className="w-full p-2 border rounded"
 						value={nom}
 						onChange={(e) => setNom(e.target.value)}
-						placeholder="Nom du forfait"
 						required
 					/>
 				</div>
@@ -99,7 +144,6 @@ const AddPackage = ({onAdd, categories = [] }) => {
 						rows={3}
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
-						placeholder="Description"
 						required
 					/>
 				</div>
@@ -195,7 +239,7 @@ const AddPackage = ({onAdd, categories = [] }) => {
 								<button
 									type="button"
 									onClick={() => removeImageInput(index)}
-									className="text-red-500 cursor-pointer"
+									className="text-red-500 cursor-pointer "
 								>
 									<svg
 										width="28"
@@ -260,4 +304,4 @@ const AddPackage = ({onAdd, categories = [] }) => {
 	);
 };
 
-export default AddPackage;
+export default EditPackage;
