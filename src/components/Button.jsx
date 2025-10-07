@@ -1,10 +1,6 @@
-const Button = ({ color = "btn-blue", nom, onClick }) => {
+const Button = ({ color = "", textColor = "white", textSize = "text-xl", nom = "Ajouter un forfait", onClick }) => {
 	return (
-		<button
-			onClick={onClick}
-			style={{ backgroundColor: color }}
-			className="btn btn-blue text-white font-bold py-2 px-4 rounded"
-		>
+		<button onClick={onClick} className="btnAdd ">
 			{nom}
 		</button>
 	);
