@@ -28,7 +28,7 @@ const PopUpSuccess = ({ message, onClose }) => {
 
 	return (
 		<div
-			className={`fixed top-6 right-6 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50 max-w-xs transition-opacity duration-500 ease-in-out
+			className={`fixed top-6 right-6 bg-green-500 text-white px-4 text-2xl py-4 rounded shadow-lg z-50 transition-opacity duration-500 ease-in-out
 				${visible ? "opacity-100" : "opacity-0"}
 			`}
 		>
@@ -38,7 +38,7 @@ const PopUpSuccess = ({ message, onClose }) => {
 					setVisible(false);
 					setTimeout(onClose, 500);
 				}}
-				className="ml-4 font-bold"
+				className="ml-4 font-bold text-white text-xl"
 			>
 				X
 			</button>

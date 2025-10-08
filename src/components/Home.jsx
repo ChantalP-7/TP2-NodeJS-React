@@ -1,14 +1,12 @@
-const Home = ({ packages }) => {	
-	
-
+import { Link } from "react-router-dom";
+const Home = ({ packages }) => {
 	// Trier les packages en ordre descendant
 	const sortedPackages = [...packages].sort(
 		(a, b) => new Date(b.date) - new Date(a.date)
 	);
 
 	// Prendre les 6 premiers
-	const recentPackages = sortedPackages.slice(0, 6);
-
+	const recentPackages = sortedPackages.slice(0, 6);	
 	return (
 		<>
 			<div className="div-title">
@@ -18,7 +16,7 @@ const Home = ({ packages }) => {
 			</div>
 			<div className="grid-container">
 				{/* Boucle dans les 6 derniers forfaits enregistrés */}
-				{recentPackages.map((item) => {
+				{recentPackages.map((item) => {					
 					// Trouver une image valide
 					const validImages = Array.isArray(item.images)
 						? item.images.filter((img) => img?.trim() !== "")
@@ -44,7 +42,7 @@ const Home = ({ packages }) => {
 									<p className="text-xl">
 										<strong>Categorie : </strong>
 										<em>{item.categorie}</em>
-									</p>									
+									</p>
 									<a
 										href={`/forfait/${item.id}`}
 										className="text-xl text-blue-600 hover"
@@ -57,6 +55,9 @@ const Home = ({ packages }) => {
 					);
 				})}
 			</div>
+			<Link to="/forfaits" className="text-blue-600 hover:cursor-pointer">
+				Forfaits
+			</Link>
 		</>
 	);
 };
