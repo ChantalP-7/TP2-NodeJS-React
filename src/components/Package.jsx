@@ -47,12 +47,12 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 		}
 	}, [location.state]);
 
-	if (p === null) return <p>Chargement du forfait...</p>;
+	if (p === null) return <h1 text-white font-bold>Chargement...</h1>;
 
 	// Formater les dates en français
 
 	const formatDate = (dateString) => {
-		if (!dateString) return "Pas de mise à jour";
+		if (!dateString) return "";
 		const date = new Date(dateString);
 		return new Intl.DateTimeFormat("fr-FR", {
 			year: "numeric",
@@ -116,15 +116,16 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 				</p>
 
 				<p className="text-xl">
-					<strong>Créé le : </strong>{formatDate(p.dateCreation)}
+					<strong>Créé le : </strong>
+					{formatDate(p.dateCreation)}
 				</p>
 				<p className="text-xl">
 					<strong>Mis à jour le : </strong>{" "}
-					{formatDate(p.miseAJour)}
+					{formatDate(p.dateMiseAJour)}
 				</p>
 				{galleryImages.length > 0 && (
 					<div className="mt-6 ">
-						<div class="ligneBasse">
+						<div className="ligneBasse">
 							<p></p>
 						</div>
 						<h4 className="font-semibold mb-2">Galerie</h4>

@@ -24,6 +24,12 @@ const Header = ({ title = "Vol au bout du monde", toggleForm, showAdd }) => {
 					Accueil
 				</Link>
 				<Link
+					to="/About"
+					className="text-blue-600 font-semibold hover:cursor-pointer"
+				>
+					À propos
+				</Link>
+				<Link
 					to="/forfaits"
 					className="text-blue-600 hover:cursor-pointer"
 				>

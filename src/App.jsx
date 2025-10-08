@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import About from "./components/About";
 import AddPackage from "./components/AddPackage";
 import AllPackages from "./components/AllPackages";
 import EditPackage from "./components/EditPackage";
@@ -121,6 +122,10 @@ function App() {
 							<Route
 								path="/forfaits"
 								element={<AllPackages packages={packages} />}
+							/>
+							<Route
+								path="/About"	
+								element={<About />}							
 							/>
 							<Route
 								path="/forfait/:id"

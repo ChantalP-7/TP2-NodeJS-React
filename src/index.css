@@ -7,63 +7,63 @@
 }
 
 
-body {    
+body {
     display: flex;
     flex-direction: column;
     background-image: url(.././images/water-lily-1857350_1280.jpg);
     background-size: cover;
     background-attachment: fixed;
-    background-position: top;
+    background-position: top;    
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.514);
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.514);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 50px;
 }
 
 header h1 {
-  font-size: clamp(16px, 5vw, 35px);
+    font-size: clamp(16px, 5vw, 35px);
 }
 
 nav {
-  background-color: transparent;
-  gap: 20px;
+    background-color: transparent;
+    gap: 20px;
 }
 
 nav a {
-  padding: 8px 18px;
-  background-color: white;
-  color: black;
-  font-size: 20px;
-  text-decoration: none;
-  border-radius: 3px;
+    padding: 8px 18px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 3px;
 }
 
 .btnAdd {
-  padding: 8px 18px !important;
-  background-color: rgb(34, 211, 255) !important;
-  color: white !important;
-  font-size: 20px !important;  
-  border-radius: 50px;
+    padding: 8px 18px !important;
+    background-color: rgb(34, 211, 255) !important;
+    color: white !important;
+    font-size: 20px !important;  
+    border-radius: 50px;
 }
 
 .btnAdd:hover {
-  cursor: pointer;
-  background-color: rgb(29, 108, 255) !important;
+    cursor: pointer;
+    background-color: rgb(29, 108, 255) !important;
 }
 
 footer {
-  background-color: rgba(0, 0, 0, 0.808);
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  color: white;
-  padding: 10px 20px; 
+    background-color: rgba(0, 0, 0, 0.808);
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    color: white;
+    padding: 10px 20px; 
 }
 
 body footer , header {
@@ -72,10 +72,12 @@ body footer , header {
 
 .container {
     min-width: 100%;
+    min-height: 100vh;    
     background-color: rgba(255, 255, 255, 0.288);
     font-family: "Klee One";
     padding: 0;
 }
+
 
 h1, h2, h3  {
     font-family: Charm;
@@ -83,7 +85,7 @@ h1, h2, h3  {
 }
 
 .title-show {
-  font-size: clamp(16px, 5vw, 65px);
+    font-size: clamp(16px, 5vw, 65px);
 }
 
 h1 {
@@ -111,9 +113,9 @@ p {
 }
 
 footer a {
-  font-size: clamp(16px, 5vw, 22px);
-  text-decoration: none;
-  color:rgb(34, 211, 255)
+    font-size: clamp(16px, 5vw, 22px);
+    text-decoration: none;
+    color:rgb(34, 211, 255)
 }
 
 .footer a:hover {
@@ -121,104 +123,111 @@ footer a {
 }
 
 .formulaire {
-  max-width: 800px;
-  background-color: white;
-  margin-bottom: 50px;
-  border-radius: 10px; 
-  font-family: "Klee One" 
+    max-width: 800px;
+    background-color: white;
+    margin-bottom: 50px;
+    border-radius: 10px; 
+    font-family: "Klee One" 
 }
 
 hr {
-  border: dotted 1px blue;
-  margin-top: 50px;
-  margin-bottom: 30px;
+    border: dotted 1px blue;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.btn-aqua {
+    background-color: rgb(34, 211, 255);
+    & hover {
+        background-color: rgb(3, 116, 145);
+    }
 }
 
 .btn {
     @apply text-white font-bold px-4 py-2 rounded cursor-pointer;
 }
+
 .btn-blue {
-  @apply bg-blue-500 hover:bg-blue-700
-}
-.btn-red {
-  @apply bg-red-600 hover:bg-red-700;
-}
-.btn-green {
-  @apply bg-green-600 hover:bg-green-700;
-}
-.btn-gray {
-  @apply bg-gray-200 hover:bg-gray-700;
-}
-.btn-block{
-  @apply block w-full;
-}
-.add-form {
-  @apply mb-8 pt-4 border-t border-b  pb-4; 
-}
-.form-control label {
-  @apply block mb-2 text-xl font-medium text-black;
-}
-.form-control input, select, textarea {
-  @apply bg-gray-50 border border-gray-400 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5; 
-}
-.form-control-check {
-  @apply flex items-center justify-between my-5; 
-}
-.form-control-check input {
-  @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2;
-}
-.form-control-check label {
-  @apply ms-2 text-sm font-medium text-gray-900;
+    @apply bg-blue-500 hover:bg-blue-700
 }
 
+.btn-red {
+    @apply bg-red-600 hover:bg-red-700;
+}
+
+.btn-green {
+    @apply bg-green-600 hover:bg-green-700;
+}
+
+.btn-gray {
+    @apply bg-gray-200 hover:bg-gray-700;
+}
+
+.btn-block{
+    @apply block w-full;
+}
+
+.add-form {
+    @apply mb-8 pt-4 border-t border-b  pb-4; 
+}
+
+.form-control label {
+    @apply block mb-2 text-xl font-medium text-black;
+}
+
+.form-control input, select, textarea {
+    @apply bg-gray-50 border border-gray-400 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5; 
+}
+
+
 .div-title {
-  background-color: rgba(255, 255, 255, 0.671);
-  padding: 10px 26px;
-  width:fit-content;
-  margin: 100px auto;
-  border-radius: 50px;
-  font-size: 75px;
+    background-color: rgba(255, 255, 255, 0.671);
+    padding: 10px 26px;
+    width:fit-content;
+    margin: 100px auto;
+    border-radius: 50px;
+    font-size: 75px;
 }
 
 .grid-container {
-  
-  margin: 50px auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  padding: 20px;
+    flex-grow: 1;    
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 20px;
 }
 
 .card {
-  border-radius: 15px; 
-  background-color: white;
-  box-shadow: 0 0 14px rgba(197, 197, 197, 0.699);
+    border-radius: 15px; 
+    background-color: white;
+    box-shadow: 0 0 14px rgba(197, 197, 197, 0.699);
 }
 
 .card img {
-  border-radius: 15px 15px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
 }
 
 .carte-info {
-  padding: 20px;
+    padding: 20px;
 }
 
 .carte-info  *+* {
-  margin-top: 10px;
-  margin-bottom: 30px
+    margin-top: 10px;
+    margin-bottom: 30px
 }
 
 .carte-info a {
-  color: white;
-  padding: 8px 18px;
-  background-color: rgb(1, 187, 178);
-  border-radius: 3px;
+    color: white;
+    padding: 8px 18px;
+    background-color: rgb(1, 187, 178);
+    border-radius: 3px;
 }
 
 .carte-info a:hover {
-  color: white; 
-  background-color: rgb(0, 102, 97);
-  border-radius: 3px;
+    color: white; 
+    background-color: rgb(0, 102, 97);
+    border-radius: 3px;
 }
 
 
@@ -231,14 +240,14 @@ hr {
 .ligneBasse p{
     min-width: 100%;
     border: 1px dotted rgba(0, 0, 0, 0.911);
-    color: rgba(0, 0, 0, 0.911);
+    color: rgba(255, 255, 255, 0.911);
     overflow: visible;
     text-align: center;
     height: 1px;
 }
 
 .ligneBasse p::after {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     content: url('img.svg');
     padding: 0 10px;
     position: relative;

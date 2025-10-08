@@ -10,8 +10,8 @@ const EditPackage = ({onEdit, categories = [] }) => {
 	const [nom, setNom] = useState("");
 	const [description, setDescription] = useState("");
 	const [prix, setPrix] = useState("");
-	const [categorie, setCategorie] = useState("");
-	const [dateCreation, setDateCreation] = useState("");
+	const [categorie, setCategorie] = useState("");	
+	const [dateMiseAJour, setDateMiseAJour] = useState("");
 	const [images, setImages] = useState([]);
 	const validImages = images.filter((img) => img?.trim() !== "");
 	const [successMessage, setSuccessMessage] = useState(""); // Message de succès
@@ -32,7 +32,7 @@ const EditPackage = ({onEdit, categories = [] }) => {
 						: ""
 				);
 				setCategorie(data.categorie || "");
-				setDateCreation(data.dateCreation || "");
+				setDateMiseAJour(data.dateMiseAJour || "");
 				setImages(Array.isArray(data.images) ? data.images : []);
 			} catch (error) {
 				console.error("Erreur :", error);
@@ -72,7 +72,7 @@ const EditPackage = ({onEdit, categories = [] }) => {
 			description,
 			prix: parseFloat(prix),
 			categorie,
-			dateCreation,
+			dateMiseAJour,
 			images: images.filter((img) => img.trim() !== ""), // nettoyer les vides
 		};
 
@@ -177,12 +177,12 @@ const EditPackage = ({onEdit, categories = [] }) => {
 					</select>
 				</div>
 				<div className="form-control mt-5">
-					<label>Date de création</label>
+					<label>Date de mise à jour</label>
 					<input
 						type="date"
 						className="w-full p-2 border rounded"
-						value={dateCreation}
-						onChange={(e) => setDateCreation(e.target.value)}
+						value={dateMiseAJour}
+						onChange={(e) => setDateMiseAJour(e.target.value)}
 						required
 					/>
 				</div>
