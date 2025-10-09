@@ -14,9 +14,9 @@ const Home = ({ packages }) => {
 					Nos forfaits récents
 				</h1>
 			</div>
-			<div className="grid-container">
+			<div className="grid-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
 				{/* Boucle dans les 6 derniers forfaits enregistrés */}
-				{recentPackages.map((item) => {					
+				{recentPackages.map((item) => {
 					// Trouver une image valide
 					const validImages = Array.isArray(item.images)
 						? item.images.filter((img) => img?.trim() !== "")

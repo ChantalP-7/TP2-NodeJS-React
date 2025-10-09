@@ -98,7 +98,6 @@
       "description": "Le monde de Disney, c’est plonger dans un univers magique où les contes prennent vie à travers des parades, attractions spectaculaires et rencontres avec les personnages emblématiques. Petits et grands y vivent une expérience inoubliable, entre émerveillement, aventures et rêves réalisés.",
       "prix": 6500,
       "categorie": "Famille",
-      "dateCreation": "2024-01-23",
       "dateMiseAJour": "2024-03-15",
       "images": [
         "https://cdn.pixabay.com/photo/2015/12/18/03/03/germany-1098189_640.jpg",
@@ -257,8 +256,7 @@
       "description": "La Toscane est une région d’Italie réputée pour ses paysages vallonnés, ses villages médiévaux et ses vignobles renommés. Elle séduit par son patrimoine artistique exceptionnel, notamment à Florence, berceau de la Renaissance.",
       "prix": 7500,
       "categorie": "Romantique",
-      "dateCreation": "2025-10-05",
-      "dateMiseAJour": "",
+      "dateMiseAJour": "2025-10-08",
       "images": [
         "https://cdn.pixabay.com/photo/2020/02/13/12/46/tuscany-4845530_640.jpg",
         "https://cdn.pixabay.com/photo/2017/10/01/23/41/la-vialla-2807436_640.jpg",

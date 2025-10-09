@@ -30,26 +30,43 @@ header h1 {
     font-size: clamp(16px, 5vw, 35px);
 }
 
-nav {
+.nav-link {
     background-color: transparent;
+    transition: background-color 0.3s ease;    
     gap: 20px;
 }
 
-nav a {
+.nav-link a {
     padding: 8px 18px;
-    background-color: white;
+    background-color: white;    
     color: black;
     font-size: 20px;
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: 3px;    
 }
+
+.nav-link a.active {
+    background-color: rgb(34, 211, 255) !important;  
+    color: white;  
+}
+
+.brand {
+    font-family: 'Klee One';
+    font-size: 26px;
+}
+
+.logo {
+    width: 100px;
+}
+
 
 .btnAdd {
     padding: 8px 18px !important;
     background-color: rgb(34, 211, 255) !important;
     color: white !important;
-    font-size: 20px !important;  
+    font-weight: 700; 
     border-radius: 50px;
+    font-size: clamp(14px, 1vw, 24px);;
 }
 
 .btnAdd:hover {
@@ -77,7 +94,6 @@ body footer , header {
     font-family: "Klee One";
     padding: 0;
 }
-
 
 h1, h2, h3  {
     font-family: Charm;
@@ -127,11 +143,11 @@ footer a {
     background-color: white;
     margin-bottom: 50px;
     border-radius: 10px; 
-    font-family: "Klee One" 
+    font-family: "Klee One";
 }
 
 hr {
-    border: dotted 1px blue;
+    border: dotted 1px rgb(34, 211, 255) !important;
     margin-top: 50px;
     margin-bottom: 30px;
 }
@@ -192,8 +208,7 @@ hr {
 .grid-container {
     flex-grow: 1;    
     margin: 50px auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    
     gap: 50px;
     padding: 20px;
 }
@@ -254,3 +269,5 @@ hr {
     top: -20px;
     font-size: 25px;
   }
+
+ 

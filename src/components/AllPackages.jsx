@@ -66,7 +66,7 @@ const AllPackages = ({ packages }) => {
 				))}
 			</div>
 
-			<div className="grid-container">
+			<div className="grid-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
 				{currentPackages.length > 0 ? (
 					currentPackages.map((item) => {
 						const validImages = Array.isArray(item.images)
@@ -79,10 +79,10 @@ const AllPackages = ({ packages }) => {
 								: "https://via.placeholder.com/300x200?text=Pas+d'image";
 
 						return (
-							<div key={item.id} className="grid-item">
+							<div key={item.id} className="grid-item ">
 								<div
 									key={item.id}
-									className="card  pb-5 rounded-lg shadow overflow-hidden"
+									className="card pb-5 rounded-lg shadow overflow-hidden"
 								>
 									<img
 										src={imageUrl}

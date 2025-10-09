@@ -87,15 +87,15 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 	return (
 		<>
 			{successMessage && (
-				<div className="fixed top-30 left-30 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50 w-auto max-w-xs">
+				<div className="fixed top-30 left-30 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50 w-auto max-w-xs text-center text-sm sm:text-base">
 					{successMessage}
 				</div>
 			)}
 			<div className="div-title">
 				<h1 className="text-center title-show">{p.nom} </h1>
 			</div>
-			<div className="bg-white single-package m-30 mt-30 border border-gray-200 shadow rounded-2xl p-4">
-				<div className="mt-4 mb-10">
+			<div className="bg-white single-package mx-4 sm:mx-8 md:mx-16 lg:mx-32 m-30 mt-30 border border-gray-200 shadow rounded-2xl p-2 sm:p-3 xs:p-2 mb-10">
+				<div className="mt-4 mb-8 ">
 					<img
 						src={previewImage || mainImage}
 						alt="Image principale du forfait"
@@ -124,18 +124,18 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 					{formatDate(p.dateMiseAJour)}
 				</p>
 				{galleryImages.length > 0 && (
-					<div className="mt-6 ">
+					<div className="mt-10 ">
 						<div className="ligneBasse">
 							<p></p>
 						</div>
 						<h4 className="font-semibold mb-2">Galerie</h4>
-						<div className="flex justify-start items-center gap-5 mt-10 mb-10 ">
+						<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
 							{galleryImages.map((img, i) => (
 								<img
 									key={i}
 									src={img}
 									alt={`Galerie ${i + 1}`}
-									className="h-auto max-w-3xs aspect-[5/3] cover transition-all duration-300 rounded-md cursor-pointer filter grayscale-0 hover:grayscale"
+									className="w-full h-auto aspect-[5/3] object-cover transition-all duration-300 rounded-md cursor-pointer filter grayscale-0 hover:grayscale"
 									onClick={() => setPreviewImage(img)}
 								/>
 							))}
@@ -151,27 +151,27 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 							<img
 								src={previewImage}
 								alt="Aperçu"
-								className="max-h-[90vh] max-w-[90vw] object-contain rounded shadow-lg"
+								className="max-h-[90vh] max-w-[90vw] md:max-h-[90vw] md:max-w-[90vw] object-contain rounded shadow-lg"
 							/>
 						</div>
 					</div>
 				)}
-				<div className="mt-6 flex gap-4 mb-6 items-center justify-start">
+				<div className="mt-10 flex flex-wrap gap-4 items-center">
 					<Link
 						to="/"
-						className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-green-600 hover:underline hover-cursor-pointer"
+						className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-green-600 hover-cursor-pointer text-sm sm:text-base"
 					>
 						Retour
 					</Link>
 					<button
 						onClick={handleEdit}
-						className="bg-green-500 text-white px-3 py-1 rounded hover:bg-yellow-600 hover-cursor-pointer"
+						className="bg-green-500 text-white px-4 py-2 rounded hover:bg-yellow-600 hover-cursor-pointer text-sm sm:text-base"
 					>
 						Éditer
 					</button>
 					<button
 						onClick={handleDelete}
-						className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-700 hover-cursor-pointer"
+						className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 hover-cursor-pointer text-sm sm:text-base"
 					>
 						Supprimer
 					</button>
