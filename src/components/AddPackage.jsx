@@ -49,7 +49,7 @@ const AddPackage = ({onAdd, categories = [] }) => {
 		onAdd(newPackage)
 
 		try {
-			const res = await fetch(`http://localhost:5000/forfaits`, {
+			const res = await fetch(`/forfaits.json`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

@@ -13,14 +13,16 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 	useEffect(() => {
 		setShowAddPackage(false);
 
+
+		
+
 		const fetchPackage = async () => {
 			try {
-				const response = await fetch(
-					`http://localhost:5000/forfaits/${id}`
-				);
-				if (!response.ok) throw new Error("Erreur lors du chargement");
+				const response = await fetch("/forfaits.json");
 				const data = await response.json();
-				setPackage(data);
+				const foundPackage = data.forfaits.find((f) => f.id === id);
+				if (!foundPackage) throw new Error("Forfait non trouvé");
+				setPackage(foundPackage);
 			} catch (error) {
 				console.error("Erreur fetch package:", error);
 				setPackage(null);

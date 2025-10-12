@@ -77,7 +77,7 @@ const EditPackage = ({onEdit, categories = [] }) => {
 		};
 
 		try {
-			const res = await fetch(`http://localhost:5000/forfaits/${id}`, {
+			const res = await fetch(`/forfaits.json/${id}`, {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",

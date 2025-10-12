@@ -265,6 +265,18 @@
         "https://cdn.pixabay.com/photo/2017/09/10/18/22/summer-2736457_640.jpg"
       ],
       "id": "8832"
+    },
+    {
+      "id": "9978",
+      "nom": "d",
+      "description": "s",
+      "prix": "500",
+      "categorie": "Romantique",
+      "dateCreation": "2025-10-30",
+      "images": []
+    },
+    {
+      "id": "802e"
     }
   ]
 }
