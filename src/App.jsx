@@ -111,7 +111,7 @@ function App() {
 					) : (
 						<Routes>
 							<Route
-								path="/"
+								path="/react"
 								element={
 									<Home
 										packages={packages}
