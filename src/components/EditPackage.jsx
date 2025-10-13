@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import PopUpSuccess from "./PopUpSuccess"; 
-import { useLocation } from "react-router-dom";
-const location = useLocation();
-const forfait = location.state?.forfait;
 
 const EditPackage = ({onEdit, categories = [] }) => {
 	const { id } = useParams();
@@ -20,20 +17,30 @@ const EditPackage = ({onEdit, categories = [] }) => {
 	const [successMessage, setSuccessMessage] = useState(""); // Message de succès
 
 	useEffect(() => {
-	if (forfait) {
-		setNom(forfait.nom || "");
-		setDescription(forfait.description || "");
-		setPrix(
-		forfait.prix !== undefined && forfait.prix !== null
-			? forfait.prix.toString()
-			: ""
-		);
-		setCategorie(forfait.categorie || "");
-		setDateMiseAJour(forfait.dateMiseAJour || "");
-		setImages(Array.isArray(forfait.images) ? forfait.images : []);
-	}
-}, [forfait]);
+		const fetchPackage = async () => {
+			try {
+				const res = await fetch(`http://localhost:5000/forfaits/${id}`);
+				if (!res.ok)
+					throw new Error("Erreur lors du chargement du forfait");
 
+				const data = await res.json();
+				setNom(data.nom || "");
+				setDescription(data.description || "");
+				setPrix(
+					data.prix !== undefined && data.prix !== null
+						? data.prix.toString()
+						: ""
+				);
+				setCategorie(data.categorie || "");
+				setDateMiseAJour(data.dateMiseAJour || "");
+				setImages(Array.isArray(data.images) ? data.images : []);
+			} catch (error) {
+				console.error("Erreur :", error);
+			}
+		};
+
+		fetchPackage();
+	}, [id]);
 
 	// Section images
 
@@ -70,7 +77,7 @@ const EditPackage = ({onEdit, categories = [] }) => {
 		};
 
 		try {
-			const res = await fetch(`/forfaits.json/${id}`, {
+			const res = await fetch(`http://localhost:5000/forfaits/${id}`, {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",
