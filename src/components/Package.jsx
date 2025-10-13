@@ -1,7 +1,6 @@
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-
 const Package = ({ setShowAddPackage, onDelete }) => {
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -12,9 +11,6 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 
 	useEffect(() => {
 		setShowAddPackage(false);
-
-
-		
 
 		const fetchPackage = async () => {
 			try {
@@ -83,8 +79,11 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 	};
 
 	const handleEdit = () => {
-		navigate(`/forfaits/${p.id}/edit`);
+		navigate(`/forfaits/${p.id}/edit`, {
+			state: { forfait: p }
+		});
 	};
+
 
 	return (
 		<>
