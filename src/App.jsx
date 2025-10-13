@@ -23,9 +23,9 @@ function App() {
 	useEffect(() => {
 		const getPackages = async () => {
 			const packagesFromServer = await fetchPackages(
-				"/forfaits.json"
+				"http://localhost:5000/forfaits"
 			);
-			setPackages(packagesFromServer.forfaits);
+			setPackages(packagesFromServer);
 		};
 		getPackages();
 	}, []);
@@ -38,13 +38,13 @@ function App() {
 
 	const toggleReminder = async (id) => {
 		const packageToToggle = await fetchPackages(
-			`/forfaits.json/${id}`
+			`http://localhost:5000/forfaits/${id}`
 		);
 		const updPackage = {
 			...packageToToggle,
 			reminder: !packageToToggle.reminder,
 		};
-		const res = await fetch(`/forfaits.json/${id}`, {
+		const res = await fetch(`http://localhost:5000/forfaits/${id}`, {
 			method: "PUT",
 			headers: {
 				"Content-type": "application/json",
@@ -61,14 +61,14 @@ function App() {
 	};
 
 	const deletePackage = async (id) => {
-		await fetch(`/forfaits.json/${id}`, {
+		await fetch(`http://localhost:5000/forfaits/${id}`, {
 			method: "DELETE",
 		});
 		setPackages(packages.filter((p) => p.id !== id));
 	};
 
 	const editPackage = async (id) => {
-		await fetch(`/forfaits.json/${id}`, {
+		await fetch(`http://localhost:5000/forfaits/${id}`, {
 			method: "PATCH",
 		});
 		setPackages(packages.filter((p) => p.id !== id));
@@ -77,7 +77,7 @@ function App() {
 	const addPackage = async (p) => {
 		try {
 			console.log("Données envoyées :", p);
-			const res = await fetch("/forfaits.json", {
+			const res = await fetch("http://localhost:5000/forfaits", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(p),

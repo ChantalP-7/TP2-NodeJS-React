@@ -1,6 +1,7 @@
 import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 const Package = ({ setShowAddPackage, onDelete }) => {
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -14,11 +15,12 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 
 		const fetchPackage = async () => {
 			try {
-				const response = await fetch("/forfaits.json");
+				const response = await fetch(
+					`http://localhost:5000/forfaits/${id}`
+				);
+				if (!response.ok) throw new Error("Erreur lors du chargement");
 				const data = await response.json();
-				const foundPackage = data.forfaits.find((f) => f.id === id);
-				if (!foundPackage) throw new Error("Forfait non trouvé");
-				setPackage(foundPackage);
+				setPackage(data);
 			} catch (error) {
 				console.error("Erreur fetch package:", error);
 				setPackage(null);
@@ -79,11 +81,8 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 	};
 
 	const handleEdit = () => {
-		navigate(`/forfaits/${p.id}/edit`, {
-			state: { forfait: p }
-		});
+		navigate(`/forfaits/${p.id}/edit`);
 	};
-
 
 	return (
 		<>
