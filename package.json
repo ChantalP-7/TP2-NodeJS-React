@@ -39,5 +39,5 @@
 		"globals": "^16.4.0",
 		"vite": "^7.1.7"
 	},
-	"homepage": "https://app.netlify.com/react-forfaits-voyages.netlify.app/react/"
+	"homepage": "https://app.netlify.com/react-forfaits-voyages.netlify.app"
 }
