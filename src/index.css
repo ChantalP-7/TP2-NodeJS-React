@@ -95,7 +95,7 @@ body footer , header {
     padding: 0;
 }
 
-h1, h2, h3  {
+h1, h2, h3, h4  {
     font-family: Charm;
     font-weight: 700;
 }
@@ -207,8 +207,7 @@ hr {
 
 .grid-container {
     flex-grow: 1;    
-    margin: 50px auto;
-    
+    margin: 50px auto;    
     gap: 50px;
     padding: 20px;
 }
@@ -224,7 +223,10 @@ hr {
 }
 
 .carte-info {
-    padding: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 1px;
 }
 
 .carte-info  *+* {
@@ -233,18 +235,27 @@ hr {
 }
 
 .carte-info a {
-    color: white;
-    padding: 8px 18px;
-    background-color: rgb(1, 187, 178);
-    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    padding: 6px 14px;
+    background-color: rgb(14, 126, 102);    
+    border-radius: 50px;
+    border: solid 1px transparent;
+    margin-bottom: 15px;    
+    &:hover {
+        background-color: rgb(20, 159, 194);
+    }
+
 }
 
-.carte-info a:hover {
-    color: white; 
-    background-color: rgb(0, 102, 97);
+
+
+.carte-info a:hover svg:hover {
+    color: rgb(0, 102, 97); 
+    fill: rgb(0, 102, 97);
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(0, 102, 97);
     border-radius: 3px;
 }
-
 
 .ligneBasse {
     display: flex;

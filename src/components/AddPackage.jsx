@@ -9,7 +9,6 @@ const AddPackage = ({onAdd, categories = [] }) => {
 	const [description, setDescription] = useState("");
 	const [prix, setPrix] = useState("");
 	const [categorie, setCategorie] = useState("");
-	const [dateCreation, setDateCreation] = useState("");
 	const [images, setImages] = useState([""]);
 	const [successMessage, setSuccessMessage] = useState("");
 
@@ -32,7 +31,7 @@ const AddPackage = ({onAdd, categories = [] }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		if (!nom || !description || !prix || !categorie || !dateCreation) {
+		if (!nom || !description || !prix || !categorie) {
 			alert("Tous les champs sont obligatoires");
 			return;
 		}
@@ -42,19 +41,21 @@ const AddPackage = ({onAdd, categories = [] }) => {
 			description,
 			prix,
 			categorie,
-			dateCreation,
+			dateCreation: new Date().toISOString(),
+  			dateMiseAJour: null,
 			images: images.filter((url) => url.trim() !== ""), // filtrer les champs vides
 		};
 
 		onAdd(newPackage)
 
 		try {
-			const res = await fetch(`/forfaits.json`, {
+			// Fetch avant de faire "navigate()", évite d'avoir un id undefined lorsqu'on soumet le formulaire
+			const res = await fetch(`http://localhost:5000/forfaits`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify(AddPackage),
+				body: JSON.stringify(newPackage),
 			});
 
 			if (!res.ok) {
@@ -64,7 +65,7 @@ const AddPackage = ({onAdd, categories = [] }) => {
 			const data = await res.json(); // contient le nouveau forfait avec son id
 
 			navigate(`/forfait/${data.id}`, {
-				state: { package: data, successMessage: `...` },
+				state: { package: data, successMessage: `Forfait enregistré avec succès!` },
 			});
 
 		} catch (error) {
@@ -76,7 +77,7 @@ const AddPackage = ({onAdd, categories = [] }) => {
 		<div className="formulaire p-6 max-w-xl mx-auto">
 			<h2 className="text-2xl font-bold mb-4">Ajouter un Forfait</h2>
 			{successMessage && (
-				<div className="bg-green-100 text-green-700 px-4 py-2 rounded">
+				<div className="bg-green-100 text-green-700 px-4 py-2 rounded mt-10">
 					{successMessage}
 				</div>
 			)}
@@ -132,16 +133,7 @@ const AddPackage = ({onAdd, categories = [] }) => {
 						))}
 					</select>
 				</div>
-				<div className="form-control mt-5">
-					<label>Date de création</label>
-					<input
-						type="date"
-						className="w-full p-2 border rounded"
-						value={dateCreation}
-						onChange={(e) => setDateCreation(e.target.value)}
-						required
-					/>
-				</div>
+				
 				<div className="ligneBasse">
 					<p></p>
 				</div>

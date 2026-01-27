@@ -55,10 +55,10 @@ const AllPackages = ({ packages }) => {
 					<button
 						key={cat}
 						onClick={() => setSelectedCategory(cat)}
-						className={`px-4 py-2 rounded-full text-2xl ${
+						className={`px-4 py-0 rounded-full text-lg font-bold ${
 							selectedCategory === cat
 								? "btn-aqua text-white"
-								: "bg-white text-gray-700 hover"
+								: "bg-white text-gray-900 hover text-lg"
 						}`}
 					>
 						{cat}
@@ -75,38 +75,35 @@ const AllPackages = ({ packages }) => {
 
 						const imageUrl =
 							validImages.length > 0
-								? validImages[0]
+								? validImages[0] + "?w=600&auto=format&fit=crop&q=70"
 								: "https://via.placeholder.com/300x200?text=Pas+d'image";
 
 						return (
 							<div key={item.id} className="grid-item ">
-								<div
-									key={item.id}
-									className="card pb-5 rounded-lg shadow overflow-hidden"
-								>
-									<img
-										src={imageUrl}
-										alt={item.nom}
-										className="w-full h-auto aspect-[4/2] object-cover rounded mb-2"
-									/>
-									<div className="carte-info">
-										<h3 className="font-bold text-2xl">
-											<strong>{item.nom}</strong>
-										</h3>
-										<p className="text-sm text-gray-900 ">
-											<strong>Catégorie : </strong>
-											{item.categorie}
-										</p>
-
-										<a
-											href={`/forfait/${item.id}`}
-											className="text-xl text-blue-600 hover"
-										>
-											En savoir plus
-										</a>
-									</div>
+								<div className="card pb-5">
+								<img
+									src={imageUrl}
+									alt={`Image du forfait ${item.nom}`}
+									className="w-full h-auto aspect-[5/3] object-cover rounded"
+									loading="lazy" decoding="async"
+								/>
+								<div className="carte-info">
+									<h4 className="text-sm">
+										{item.nom}
+									</h4>
+									<p className="text-sm">
+										<strong>Categorie : </strong>
+										<em>{item.categorie}</em>
+									</p>
+									<a
+										href={`/forfait/${item.id}`}
+										className="flex justify-center text-white text-lg mb-[5px]"
+									>
+										En savoir plus
+									</a>
 								</div>
 							</div>
+						</div>
 						);
 					})
 				) : (
@@ -123,7 +120,7 @@ const AllPackages = ({ packages }) => {
 					>
 						Précédent
 					</button>
-					<span className=" text-3xl font-bold ">
+					<span className=" text-xl font-bold ">
 						Page {currentPage} sur {totalPages}
 					</span>
 					<button

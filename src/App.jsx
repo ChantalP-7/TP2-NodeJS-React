@@ -92,8 +92,6 @@ function App() {
 		}
 	};
 
-	//const [showAddPackage, setShowAddPackage] = useState(false);
-
 	return (
 		
 			<div className="body font-sans min-h-screen">

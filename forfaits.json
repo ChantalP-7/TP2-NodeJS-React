@@ -20,7 +20,7 @@
       "nom": "Séjour à Rome",
       "description": "Visitez les sites historiques les plus emblématiques et vivez une expérience unique.",
       "prix": 4500,
-      "categorie": "Romantique",
+      "categorie": "Romance",
       "dateMiseAJour": "2025-10-08",
       "images": [
         "https://images.pexels.com/photos/2422251/pexels-photo-2422251.jpeg",
@@ -32,12 +32,11 @@
       "id": "2"
     },
     {
-      "nom": "Plongeon dans les Caraïbes",
+      "nom": "Mer des Caraïbes",
       "description": "Un mélange d’aventure et de détente dans une destination exotique. Nourriture savoureuse et fruits de mer décadents!",
       "prix": 2500,
       "categorie": "Culture",
-      "dateCreation": "2023-11-26",
-      "dateMiseAJour": "",
+      "dateMiseAJour": "2025-10-13",
       "images": [
         "https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg",
         "https://images.pexels.com/photos/2598675/pexels-photo-2598675.jpeg",
@@ -48,7 +47,7 @@
       "id": "3"
     },
     {
-      "nom": "Une escapade à Marrakech",
+      "nom": "Nuit à Marrakech",
       "description": "Idéal pour un séjour pleins de saveurs, de couleurs et d'expériences inoubliables.",
       "prix": 5500,
       "categorie": "Culture",
@@ -64,10 +63,10 @@
       "id": "4"
     },
     {
-      "nom": "Une aventure à Sidney",
+      "nom": "Aventure à Sidney",
       "description": "Profitez de paysages à couper le souffle et d’activités en plein air.",
       "prix": 3500,
-      "categorie": "Spa et détente",
+      "categorie": "Détente",
       "dateCreation": "2023-12-05",
       "dateMiseAJour": "2024-08-12",
       "images": [
@@ -83,7 +82,7 @@
       "nom": "Séjour à Hanoï",
       "description": "Partir en exploration à Hanoï, c’est s’immerger dans le cœur culturel du Vietnam, entre ruelles animées, temples anciens et lacs paisibles. La ville séduit par son mélange d’influences coloniales françaises et de traditions vietnamiennes, offrant une expérience à la fois vibrante et authentique.",
       "prix": 3500,
-      "categorie": "Spa et détente",
+      "categorie": "Détente",
       "dateMiseAJour": "2024-06-12",
       "images": [
         "https://cdn.pixabay.com/photo/2022/01/08/22/11/vietnam-6924905_640.jpg",
@@ -94,7 +93,7 @@
       "id": "6"
     },
     {
-      "nom": "Le monde de Disney",
+      "nom": "Dysney World",
       "description": "Le monde de Disney, c’est plonger dans un univers magique où les contes prennent vie à travers des parades, attractions spectaculaires et rencontres avec les personnages emblématiques. Petits et grands y vivent une expérience inoubliable, entre émerveillement, aventures et rêves réalisés.",
       "prix": 6500,
       "categorie": "Famille",
@@ -109,7 +108,7 @@
       "id": "8"
     },
     {
-      "nom": "Un matin au Caire",
+      "nom": "Au Caire",
       "description": "Un matin au Caire s’éveille dans une douce effervescence, entre l’appel du muezzin, le bourdonnement des klaxons et l’odeur du pain frais dans les rues animées. La lumière dorée du soleil caresse les minarets et les toits poussiéreux, tandis que la ville s’étire lentement entre modernité et histoire millénaire.",
       "prix": 6500,
       "categorie": "Historique",
@@ -160,7 +159,7 @@
       "nom": "Séjour en Espagne",
       "description": "ChatGPT a dit :\n\nL’Espagne est un pays ensoleillé du sud de l’Europe, riche en diversité culturelle, gastronomique et architecturale. De Barcelone à Séville, elle fascine par son histoire, ses fêtes colorées et ses paysages variés entre plages, montagnes et plaines.",
       "prix": 6500,
-      "categorie": "Romantique",
+      "categorie": "Romance",
       "dateCreation": "2024-12-07",
       "dateMiseAJour": "2025-06-12",
       "images": [
@@ -173,7 +172,7 @@
       "id": "3a62"
     },
     {
-      "nom": "Mystère en Bolivie",
+      "nom": "La Bolivie",
       "description": "Voyager en Bolivie, c’est plonger dans une aventure authentique au cœur de paysages grandioses comme le Salar d’Uyuni, le lac Titicaca ou l’Amazonie. Ce pays fascinant permet de découvrir des cultures indigènes vivantes, des marchés colorés et une histoire riche, entre nature et traditions.",
       "prix": 3800,
       "categorie": "Aventure",
@@ -204,7 +203,7 @@
       "id": "1767"
     },
     {
-      "nom": "Séjour lumineux au Brésil",
+      "nom": "Séjour au Brésil",
       "description": "Partez à la découverte d'un paysage grandiose et majestueux",
       "prix": 3700,
       "categorie": "Culture",
@@ -236,7 +235,7 @@
       "id": "9198"
     },
     {
-      "nom": "Chine : civilisation Millénaire",
+      "nom": "Chine millénaire",
       "description": "Embarquez pour une aventure fascinante à travers la Chine, un pays aux contrastes saisissants où l’histoire impériale côtoie l’effervescence moderne. ",
       "prix": 10500,
       "categorie": "Culture",
@@ -252,10 +251,11 @@
       "id": "cd22"
     },
     {
-      "nom": "Découverte de la Toscane",
+      "nom": "La Toscane",
       "description": "La Toscane est une région d’Italie réputée pour ses paysages vallonnés, ses villages médiévaux et ses vignobles renommés. Elle séduit par son patrimoine artistique exceptionnel, notamment à Florence, berceau de la Renaissance.",
       "prix": 7500,
-      "categorie": "Romantique",
+      "categorie": "Romance",
+      "dateCreation": "2025-07-22",
       "dateMiseAJour": "2025-10-08",
       "images": [
         "https://cdn.pixabay.com/photo/2020/02/13/12/46/tuscany-4845530_640.jpg",
@@ -265,6 +265,54 @@
         "https://cdn.pixabay.com/photo/2017/09/10/18/22/summer-2736457_640.jpg"
       ],
       "id": "8832"
+    },
+    {
+      "nom": "Australie",
+      "description": "Partez à la découverte de l'Australie comme vous ne l'avez jamais imaginé!",
+      "prix": 3500,
+      "categorie": "Historique",
+      "dateCreation": "2025-11-14",
+      "dateMiseAJour": "2026-01-24T19:59:57.433Z",
+      "images": [
+        "https://cdn.pixabay.com/photo/2018/01/02/09/42/koala-3055832_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2019/07/25/01/38/kangaroo-4361467_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2023/05/30/15/43/koala-8028992_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2020/06/09/22/35/bird-5280272_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2023/04/10/10/28/blue-tongue-skink-7913420_960_720.jpg"
+      ],
+      "id": "7c2b"
+    },
+    {
+      "nom": "Australie",
+      "description": "Partez à la découverte de ce pays comme vous ne l'avez jamais vu!",
+      "prix": 4200,
+      "categorie": "Aventure",
+      "dateCreation": "2025-12-04",
+      "dateMiseAJour": "2026-01-24",
+      "images": [
+        "https://cdn.pixabay.com/photo/2020/06/09/22/35/bird-5280272_1280.jpg",
+        "https://cdn.pixabay.com/photo/2023/04/02/09/24/rainbow-lorikeet-7894138_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2019/07/03/10/10/wallaby-4314086_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2018/01/02/09/42/koala-3055832_1280.jpg",
+        "https://cdn.pixabay.com/photo/2018/04/04/11/16/short-beaked-echidna-3289503_960_720.jpg"
+      ],
+      "id": "cae0"
+    },
+    {
+      "id": "fb1a",
+      "nom": "Séjour au Canada",
+      "description": "Viens te sucrer le bec dans l'une de nos cabane à sucre, parcourir nos grands paysages aux quatre saisons, et bien plus!",
+      "prix": 4900,
+      "categorie": "Famille",
+      "dateCreation": "2026-01-24T19:00:02.565Z",
+      "dateMiseAJour": "2026-01-24T19:27:45.794Z",
+      "images": [
+        "https://cdn.pixabay.com/photo/2020/03/01/15/30/fox-4893199_1280.jpg",
+        "https://cdn.pixabay.com/photo/2016/01/30/15/57/maple-syrup-1169896_1280.jpg",
+        "https://cdn.pixabay.com/photo/2021/09/26/05/09/maple-6656343_1280.jpg",
+        "https://cdn.pixabay.com/photo/2022/10/23/13/43/canoe-7541311_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2014/07/29/06/41/christmas-wallpaper-404314_1280.jpg"
+      ]
     }
   ]
 }

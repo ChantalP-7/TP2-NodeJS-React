@@ -2,15 +2,18 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-		<footer className="w-full mt-6 pt-4 flex items-center justify-center md:flex-col sm-gap-2 ml:flex-col flex-row text-center bg-gray-100">
-			<Link
-				to="/About"
-				className="hover:text-blue-700 hover:underline"
-			>
-				À propos
-			</Link>
-			<p className="text-sm mt-2">Copyright &copy; 2025</p>
-			<p className="text-sm mt-1">Conception : Chantal Pépin</p>
+		<footer className="w-full mt-6  pt-2 flex justify-center">
+			<div className="text-center">
+				<Link
+					to="/AddPackage"
+					className="hover:text-white-700 hover:cursor-pointer "
+				>
+					Contactez-nous
+				</Link>
+			</div>
+			
+				<p className="text-sm mt-2">Copyright &copy; 2025</p>
+				<p className="text-sm mt-2">Conception : Chantal Pépin</p>
 		</footer>
 	);
 }
