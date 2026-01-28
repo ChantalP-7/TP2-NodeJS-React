@@ -13,22 +13,20 @@ const Package = ({ setShowAddPackage, onDelete }) => {
 	useEffect(() => {
 		setShowAddPackage(false);
 
-		const fetchPackage = async () => {
-			try {
-				const response = await fetch(
-					`http://localhost:5000/forfaits/${id}`
-				);
-				if (!response.ok) throw new Error("Erreur lors du chargement");
-				const data = await response.json();
-				setPackage(data);
-			} catch (error) {
-				console.error("Erreur fetch package:", error);
-				setPackage(null);
-			}
-		};
+		if (!packages || packages.length === 0) {
+			console.error("Pas de forfaits disponibles !");
+			setPackage(null);
+			return;
+		}
 
-		fetchPackage();
-	}, [id, setShowAddPackage]);
+		const foundPackage = packages.find((item) => item.id === id);
+		if (foundPackage) {
+			setPackage(foundPackage);
+		} else {
+			console.error("Forfait non trouvé pour l'id :", id);
+			setPackage(null);
+		}
+	}, [id, setShowAddPackage, packages]);
 
 	useEffect(() => {
 		if (location.state?.successMessage) {

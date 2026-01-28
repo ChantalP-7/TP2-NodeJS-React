@@ -131,6 +131,7 @@ function App() {
 								path="/forfait/:id"
 								element={
 									<Package
+									packages={packages}
 										setShowAddPackage={setShowAddPackage}
 										onDelete={deletePackage}
 									/>
