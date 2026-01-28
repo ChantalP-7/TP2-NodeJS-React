@@ -95,4 +95,6 @@ Application pensée comme un système de gestion simple.
 
 Installé le fichiers forfaits.json dans le dossier public et changer l'url de fetch pour /forfaits.json dans le fichier App.jsx
 
+Ce ne sera pas possible d'ajouter, modifier et supprimer des forfaits. Ce sera Read Only.
+
 Auteure : Chantal Pépin
