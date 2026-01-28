@@ -2,7 +2,7 @@ import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
-const Package = ({ setShowAddPackage, onDelete }) => {
+const Package = ({ setShowAddPackage, onDelete, packages }) => {
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const location = useLocation();
