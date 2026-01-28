@@ -23,7 +23,9 @@ function App() {
 	useEffect(() => {
 		const getPackages = async () => {
 			const packagesFromServer = await fetchPackages(
-				"http://localhost:5000/forfaits"
+				// changé pour Netlify
+				//"http://localhost:5000/forfaits"
+				"/forfaits.json"
 			);
 			setPackages(packagesFromServer);
 		};

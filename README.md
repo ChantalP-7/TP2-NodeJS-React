@@ -91,9 +91,8 @@ Images ajoutées via URL. Optimisation des images avec **loading="lazy"**, **dec
 
 Application pensée comme un système de gestion simple.
 
+# Déploiement sur Netlify
+
+Installé le fichiers forfaits.json dans le dossier public et changer l'url de fetch pour /forfaits.json dans le fichier App.jsx
+
 Auteure : Chantal Pépin
-
-
-
-
-D
