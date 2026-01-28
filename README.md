@@ -97,4 +97,8 @@ Installé le fichiers forfaits.json dans le dossier public et changer l'url de f
 
 Ce ne sera pas possible d'ajouter, modifier et supprimer des forfaits. Ce sera Read Only.
 
+# Lien du projet sur Netlify (Lecture seulement)
+
+https://forfaitvoyage.netlify.app/
+
 Auteure : Chantal Pépin
