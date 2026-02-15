@@ -58,6 +58,7 @@ const EditPackage = ({ packages, onEdit, categories = [] }) => {
     e.preventDefault();
 
     const updatedPackage = {
+      id,
       nom,
       description,
       prix: parseFloat(prix),
@@ -66,23 +67,13 @@ const EditPackage = ({ packages, onEdit, categories = [] }) => {
       images: images.filter((img) => img.trim() !== ""),
     };
 
-    try {
-      const res = await fetch(`http://localhost:5000/forfaits/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedPackage),
-      });
-
-      if (!res.ok) throw new Error("Échec de la mise à jour du forfait");
-
-      const data = await res.json();
-      navigate(`/forfait/${data.id}`, {
-        state: { successMessage: "Le forfait a bien été modifié!" },
-      });
-    } catch (error) {
-      console.error("Erreur lors de la modification :", error);
-    }
+    onEdit(updatedPackage);
+    
+    navigate(`/forfait/${data.id}`, {
+      state: { successMessage: "Le forfait a bien été modifié!" },
+    });
   };
+   
 
   return (
     <div className="formulaire p-6 max-w-xl mx-auto">

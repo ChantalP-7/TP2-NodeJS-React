@@ -20,78 +20,51 @@ function App() {
 		setShowAddPackage(false);
 	}, [location]);
 
+	// Charger les forfaits depuis LocalStorage ou le JSON initial
 	useEffect(() => {
-		const getPackages = async () => {
-			const packagesFromServer = await fetchPackages(
-				// changé pour Netlify
-				//"http://localhost:5000/forfaits"
-				"/forfaits.json"
-			);
-			setPackages(packagesFromServer);
-		};
-		getPackages();
+		const storedPackages = localStorage.getItem("packages");
+		if (storedPackages) {
+		setPackages(JSON.parse(storedPackages));
+		} else {
+		fetch("/forfaits.json")
+			.then((res) => res.json())
+			.then((data) => {
+			setPackages(data.forfaits);
+			localStorage.setItem("packages", JSON.stringify(data.forfaits));
+			});
+		}
 	}, []);
 
-	const fetchPackages = async (url) => {
-		const res = await fetch(url);
-		const data = await res.json();
-		return data.forfaits;
+	 // Mettre à jour localStorage
+	const savePackages = (updatedPackages) => {
+		setPackages(updatedPackages);
+		localStorage.setItem("packages", JSON.stringify(updatedPackages));
 	};
 
 	const toggleReminder = async (id) => {
-		const packageToToggle = await fetchPackages(
-			`http://localhost:5000/forfaits/${id}`
+		
+		const updatedPackages = packages.map((p) =>
+		p.id === id ? { ...p, reminder: !p.reminder } : p
 		);
-		const updPackage = {
-			...packageToToggle,
-			reminder: !packageToToggle.reminder,
-		};
-		const res = await fetch(`http://localhost:5000/forfaits/${id}`, {
-			method: "PUT",
-			headers: {
-				"Content-type": "application/json",
-			},
-			body: JSON.stringify(updPackage),
-		});
-		const data = await res.json();
-
-		setPackages(
-			packages.map((p) =>
-				p.id === id ? { ...p, reminder: data.reminder } : p
-			)
-		);
+		savePackages(updatedPackages);
 	};
 
 	const deletePackage = async (id) => {
-		await fetch(`http://localhost:5000/forfaits/${id}`, {
-			method: "DELETE",
-		});
-		setPackages(packages.filter((p) => p.id !== id));
+		const updatedPackages = packages.filter((p) => p.id !== id);
+    	savePackages(updatedPackages);
 	};
 
 	const editPackage = async (id) => {
-		await fetch(`http://localhost:5000/forfaits/${id}`, {
-			method: "PATCH",
-		});
-		setPackages(packages.filter((p) => p.id !== id));
+		const updatedPackages = packages.map((p) =>
+		p.id === updated.id ? { ...p, ...updated } : p
+		);
+		savePackages(updatedPackages);
 	};
 
-	const addPackage = async (p) => {
-		try {
-			console.log("Données envoyées :", p);
-			const res = await fetch("http://localhost:5000/forfaits", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(p),
-			});
-			if (!res.ok) {
-				throw new Error("Erreur lors de l'ajout du forfait");
-			}
-			const newPackage = await res.json();
-			setPackages([...packages, newPackage]);
-		} catch (error) {
-			console.error("Erreur d'ajout :", error);
-		}
+	const addPackage = (p) => {
+		const newPackage = { ...p, id: crypto.randomUUID() }; 
+		const updatedPackages = [...packages, newPackage];
+		savePackages(updatedPackages);
 	};
 
 	return (
