@@ -141,6 +141,7 @@ function App() {
 								path="/forfaits/:id/edit"
 								element={
 									<EditPackage
+										packages={packages}
 										onEdit={editPackage}
 										categories={categories}
 									/>

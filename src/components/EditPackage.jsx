@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import PopUpSuccess from "./PopUpSuccess";
 
-const EditPackage = ({ onEdit, categories = [] }) => {
+const EditPackage = ({ packages, onEdit, categories = [] }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -17,12 +17,15 @@ const EditPackage = ({ onEdit, categories = [] }) => {
 
   // Récupération du forfait
   useEffect(() => {
-    const fetchPackage = async () => {
-      try {
-        const res = await fetch(`http://localhost:5000/forfaits/${id}`);
-        if (!res.ok) throw new Error("Erreur lors du chargement du forfait");
+   
+        if (!packages || packages.length === 0) return;
 
-        const data = await res.json();
+        const data = packages.find((item) => item.id === id);
+
+        if (!data) {
+          console.error("Forfait non trouvé");
+          return;
+        }
         setNom(data.nom || "");
         setDescription(data.description || "");
         setPrix(
@@ -30,12 +33,8 @@ const EditPackage = ({ onEdit, categories = [] }) => {
         );
         setCategorie(data.categorie || "");
         setImages(Array.isArray(data.images) && data.images.length ? data.images : [""]);
-      } catch (error) {
-        console.error("Erreur :", error);
-      }
-    };
-    fetchPackage();
-  }, [id]);
+     
+  }, [id, packages]);
 
   // Gestion des images
   const handleImageChange = (index, value) => {
