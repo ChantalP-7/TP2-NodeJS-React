@@ -54,9 +54,9 @@ function App() {
     	savePackages(updatedPackages);
 	};
 
-	const editPackage = async (id) => {
+	const editPackage = (updatedPackage) => {
 		const updatedPackages = packages.map((p) =>
-		p.id === updated.id ? { ...p, ...updated } : p
+			p.id === updatedPackage.id ? updatedPackage : p
 		);
 		savePackages(updatedPackages);
 	};

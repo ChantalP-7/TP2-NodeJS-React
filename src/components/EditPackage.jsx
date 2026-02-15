@@ -69,7 +69,7 @@ const EditPackage = ({ packages, onEdit, categories = [] }) => {
 
     onEdit(updatedPackage);
     
-    navigate(`/forfait/${data.id}`, {
+    navigate(`/forfait/${id}`, {
       state: { successMessage: "Le forfait a bien été modifié!" },
     });
   };
